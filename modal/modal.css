@@ -33,6 +33,7 @@
     width: 80%;
     box-sizing: border-box;
     border: 0.1em solid black;
+    cursor: default;
 }
 
 .modal > :first-child, .modal > :last-child {
@@ -135,6 +136,5 @@
 
 .modal-link-disabled {
     /* see modal.js */
-    color: gray;
     cursor: not-allowed;
 }
