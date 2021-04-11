@@ -1,0 +1,57 @@
+/*
+    Author      : Veselin Ivanov
+    Github      : github.com/ivanov1234159/JS-and-CSS
+    Last Changed: 2021.04.11
+*/
+.tab-link {
+    cursor: pointer;
+    font-style: italic;
+    margin: 0.2em;
+}
+
+.tab {
+    display: none;
+    box-sizing: border-box;
+}
+
+.tab.tab-active {
+    /* see tabs.js */
+    display: inherit;
+}
+
+.tab > * {
+    background: #d1e1f1;
+    border: calc(0.1em / 2) solid black;
+    text-align: center;
+    padding: 0.5em 0;
+}
+
+.tab.tab-collapse > * {
+    background: transparent;
+    border: none;
+}
+
+.tab-link.tab-link-active {
+    /* see tabs.js */
+    border: 0.2em solid orange;
+    margin: 0;
+}
+
+.tab-link.tab-link-disabled {
+    /* see tabs.js */
+    cursor: not-allowed;
+}
+
+.tab-link.tab-link-collapse {
+    border: none;
+    border-top: 0.1em solid black;
+    border-bottom: 0.1em solid black;
+    margin: 0;
+    padding: 0.2em;
+    color: #3399ff;
+}
+
+.tab-link.tab-link-collapse:hover {
+    /*text-decoration: underline;*/
+    color: #80bfff;
+}
