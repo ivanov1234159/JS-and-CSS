@@ -1,0 +1,140 @@
+/*
+    Author      : Veselin Ivanov
+    Github      : github.com/ivanov1234159/JS-and-CSS
+    Last Changed: 2021.04.11
+*/
+.modal {
+    /* see modal.js */
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.modal.modal-active {
+    /* see modal.js */
+    display: flex;
+}
+
+.modal > * {
+    background: white;
+    padding: 1.2em;
+    margin: 0;
+    width: 80%;
+    box-sizing: border-box;
+    border: 0.1em solid black;
+}
+
+.modal > :first-child, .modal > :last-child {
+    position: relative;
+    border-radius: 0.5em;
+}
+
+.modal > :first-child {
+    border-bottom: none;
+}
+
+.modal > :last-child {
+    border-top: none;
+}
+
+.modal > :first-child::before, .modal > :last-child::before {
+    content: '';
+    background: black;
+    position: absolute;
+    left: -0.065em;
+    width: calc(100% + 0.13em);
+    height: 0.6em;
+    z-index: -1;
+}
+
+.modal > :first-child::after, .modal > :last-child::after {
+    content: '';
+    background: white;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0.6em;
+}
+
+.modal > :first-child::before, .modal > :first-child::after {
+    bottom: 0;
+}
+
+.modal > :last-child::before, .modal > :last-child::after {
+    top: 0;
+}
+
+.modal > :not(:first-child):not(:last-child) {
+    border-top: 0.07em solid gray;
+    border-bottom: 0.07em solid gray;
+}
+
+.modal > :first-child > *, .modal > :last-child > * {
+    z-index: 1;
+}
+
+.modal > :not(:first-child):not(:last-child) > * {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.modal > :not(:first-child):not(:last-child) > :first-child {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.modal > :not(:first-child):not(:last-child) > :last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/*.modal > :first-child *, .modal > :last-child * {
+    margin: 0;
+}*/
+
+.modal-link-style, .modal-link, .modal-link-close {
+    /* see modal.js */
+    background: #5cb85c;
+    padding: 0.5em;
+    border: 0.1em solid gray;
+    border-radius: 0.4em;
+    cursor: pointer;
+}
+
+.modal-link-style:hover, .modal-link:hover, .modal-link-close:hover {
+    background: #449d44;
+}
+
+.modal-link-close-x {
+    /* see modal.js */
+    position: absolute;
+    right: 0.6em;
+    top: 0.5em;
+    cursor: pointer;
+}
+
+.modal-link-close-x:before {
+    content: '×';
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.modal-link-disabled {
+    /* see modal.js */
+    color: gray;
+    cursor: not-allowed;
+}
