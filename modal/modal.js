@@ -63,8 +63,7 @@ let modal = (() => {
 
     function disableLink(modalId) {
         for(let item of document.getElementsByClassName('modal-link')){
-            if(!item.hasAttribute('modal-id') || item.getAttribute('modal-id') !== modalId 
-                || !item.classList.contains('modal-link')){
+            if(item.getAttribute('modal-id') !== modalId){
                 continue;
             }
             item.classList.add('modal-link-disabled');
@@ -73,15 +72,14 @@ let modal = (() => {
     
     function enableLink(modalId) {
         for(let item of document.getElementsByClassName('modal-link')){
-            if(!item.hasAttribute('modal-id') || item.getAttribute('modal-id') !== modalId 
-                || !item.classList.contains('modal-link')){
+            if(item.getAttribute('modal-id') !== modalId){
                 continue;
             }
             item.classList.remove('modal-link-disabled');
         }
     }
 
-    function open(modalId){
+    function open(modalId) {
         let modal = document.getElementById(modalId);
         if(modal !== undefined && modal.classList.contains('modal') 
             && !modal.classList.contains('modal-active')){
