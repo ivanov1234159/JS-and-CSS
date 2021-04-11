@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Example - Modal</title>
+    <link rel="stylesheet" href="modal.css">
+    <script src="modal.js" defer></script>
+</head>
+<body>
+    <span class="modal-link" modal-id="modalIdHere">open modal</span>
+    <div id="modalIdHere" class="modal">
+        <header>
+            <h3>Title</h3>
+            <span class="modal-link-close-x modal-link-disabled"></span>
+        </header>
+        <main>
+            <p>The quick brown fox jumps over the lazy dog.</p>
+        </main>
+        <footer>
+            <span class="modal-link-close">close</span>
+            <span class="modal-link-close" onclick="console.log('submit');">submit</span>
+            <span class="modal-link-style" onclick="console.log('send');">send</span>
+        </footer>
+    </div>
+
+    <span class="modal-link" modal-id="modalIdHere2">open modal 2</span>
+    <span class="modal-link modal-link-disabled" modal-id="modalIdHere2">open modal 2</span>
+    <div id="modalIdHere2" class="modal modal-link-disabled">
+        <header>
+            <h3>Title 2</h3>
+            <span class="modal-link-close-x"></span>
+        </header>
+        <main>
+            <p>The quick brown fox jumps over the lazy dog.</p>
+        </main>
+        <footer>
+            <span class="modal-link-close">close</span>
+            <span class="modal-link-close modal-link-disabled">disabled</span>
+        </footer>
+    </div>
+</body>
+</html>
