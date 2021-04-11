@@ -32,18 +32,22 @@ let tabs = (() => {
         }
     }
 
-    function disableTabLink(element) {
-        if(!$(element).hasClass('tab-link')){
-            return;
+    function disableTabLink(tabId) {
+        for(let item of document.getElementsByClassName('tab-link')){
+            if(item.getAttribute('tab-id') !== tabId){
+                continue;
+            }
+            item.classList.add('tab-link-disabled');
         }
-        $(element).addClass('tab-link-disabled');
     }
     
-    function enableTabLink(element) {
-        if(!$(element).hasClass('tab-link')){
-            return;
+    function enableTabLink(tabId) {
+        for(let item of document.getElementsByClassName('tab-link')){
+            if(item.getAttribute('tab-id') !== tabId){
+                continue;
+            }
+            item.classList.remove('tab-link-disabled');
         }
-        $(element).removeClass('tab-link-disabled');
     }
 
     return {
