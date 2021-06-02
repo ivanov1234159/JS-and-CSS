@@ -1,14 +1,20 @@
 /*
     Author      : Veselin Ivanov
     Github      : github.com/ivanov1234159/JS-and-CSS
-    Last Changed: 2021.06.01
+    Last Changed: 2021.06.02
 */
 /* ============================== underline ============================== */
-.underline, .underline-active {
+.underline,         .underline-active,
+.underline-left,    .underline-left-active,
+.underline-center,  .underline-center-active,
+.underline-right,   .underline-right-active {
     position: relative;
 }
 
-.underline > *, .underline-active > * {
+.underline > *,         .underline-active > *,
+.underline-left > *,    .underline-left-active > *,
+.underline-center > *,  .underline-center-active > *,
+.underline-right > *,   .underline-right-active > * {
     --class-underline-offset-x: initial;
     --class-underline-offset-y: initial;
     --class-underline-width: initial;
@@ -18,7 +24,10 @@
     --class-underline-origin: initial;
 }
 
-.underline::after, .underline-active::after{
+.underline::after,          .underline-active::after,
+.underline-left::after,     .underline-left-active::after,
+.underline-center::after,   .underline-center-active::after,
+.underline-right::after,    .underline-right-active::after {
     content: '';
     position: absolute;
     left: var(--class-underline-offset-x, 0);
@@ -33,20 +42,23 @@
     transform-origin: var(--class-underline-origin, 0);
 }
 
-.underline-active::after, .underline:target::after,
-.underline:hover::after, .underline:focus::after{
+.underline-active::after,        .underline:target::after,        .underline:hover::after,        .underline:focus::after,
+.underline-left-active::after,   .underline-left:target::after,   .underline-left:hover::after,   .underline-left:focus::after,
+.underline-center-active::after, .underline-center:target::after, .underline-center:hover::after, .underline-center:focus::after,
+.underline-right-active::after,  .underline-right:target::after,  .underline-right:hover::after,  .underline-right:focus::after {
     opacity: 1;
     transform: scale(1);
 }
 
-.underline.underline-left, .underline-active.underline-left{
-    transform-origin: left;/* = 0% */
+.underline-left, .underline-left-active {
+    --class-underline-origin: left;/* = 0% */
 }
 
-.underline.underline-center, .underline-active.underline-center{
-    transform-origin: center;/* = 50% */
+.underline-center, .underline-center-active {
+    --class-underline-origin: center;/* = 50% */
 }
 
-.underline.underline-right, .underline-active.underline-right{
-    transform-origin: right;/* = 100% */
+.underline-right, .underline-right-active {
+    --class-underline-origin: right;/* = 100% */
 }
+
