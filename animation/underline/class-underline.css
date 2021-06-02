@@ -1,0 +1,52 @@
+/*
+    Author      : Veselin Ivanov
+    Github      : github.com/ivanov1234159/JS-and-CSS
+    Last Changed: 2021.06.01
+*/
+/* ============================== underline ============================== */
+.underline, .underline-active {
+    position: relative;
+}
+
+.underline > *, .underline-active > * {
+    --class-underline-offset-x: initial;
+    --class-underline-offset-y: initial;
+    --class-underline-width: initial;
+    --class-underline-thickness: initial;
+    --class-underline-color: initial;
+    --class-underline-duration: initial;
+    --class-underline-origin: initial;
+}
+
+.underline::after, .underline-active::after{
+    content: '';
+    position: absolute;
+    left: var(--class-underline-offset-x, 0);
+    bottom: calc(-1 * var(--class-underline-offset-y, 0));
+    width: var(--class-underline-width, 100%);
+    height: var(--class-underline-thickness, 0.1em);
+    background-color: var(--class-underline-color, black);
+    transition: opacity var(--class-underline-duration, 300ms)
+            , transform var(--class-underline-duration, 300ms);
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: var(--class-underline-origin, 0);
+}
+
+.underline-active::after, .underline:target::after,
+.underline:hover::after, .underline:focus::after{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.underline.underline-left, .underline-active.underline-left{
+    transform-origin: left;/* = 0% */
+}
+
+.underline.underline-center, .underline-active.underline-center{
+    transform-origin: center;/* = 50% */
+}
+
+.underline.underline-right, .underline-active.underline-right{
+    transform-origin: right;/* = 100% */
+}
