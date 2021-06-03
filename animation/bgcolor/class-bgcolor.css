@@ -1,0 +1,55 @@
+/*
+    Author      : Veselin Ivanov
+    Github      : github.com/ivanov1234159/JS-and-CSS
+    Last Changed: 2021.06.03
+*/
+/* ============================== bgcolor-linear ============================== */
+.bgcolor-linear, .bgcolor-top-bottom, .bgcolor-bottom-top,
+.bgcolor-left-right, .bgcolor-right-left {
+    background-size: 200% 200%;
+    background-image: linear-gradient(var(--class-bgcolor-angle, to bottom), /* = 180deg */
+    var(--class-bgcolor-color-hover, red) 50%,
+    var(--class-bgcolor-color, black) 0);
+    background-position-x: var(--class-bgcolor-pos-x, center);  /* = 50% */
+    background-position-y: var(--class-bgcolor-pos-y, bottom);  /* = 100% */
+    transition: background-position var(--class-bgcolor-duration, 500ms);
+}
+
+.bgcolor-linear>*, .bgcolor-top-bottom>*, .bgcolor-bottom-top>*,
+.bgcolor-left-right>*, .bgcolor-right-left>* {
+    --class-bgcolor-color: initial;
+    --class-bgcolor-color-hover: initial;
+    --class-bgcolor-angle: initial;
+    --class-bgcolor-pos-x: initial;
+    --class-bgcolor-pos-x-hover: initial;
+    --class-bgcolor-pos-y: initial;
+    --class-bgcolor-pos-y-hover: initial;
+    --class-bgcolor-duration: initial;
+}
+
+.bgcolor-linear:hover, .bgcolor-top-bottom:hover, .bgcolor-bottom-top:hover,
+.bgcolor-left-right:hover, .bgcolor-right-left:hover {
+    background-position-x: var(--class-bgcolor-pos-x-hover, center); /* = 50% */
+    background-position-y: var(--class-bgcolor-pos-y-hover, top);    /* = 0% */
+}
+
+.bgcolor-top-bottom {
+    --class-bgcolor-angle: to bottom;   /* = 180deg */
+    --class-bgcolor-pos-y: bottom;      /* = 100% */
+    --class-bgcolor-pos-y-hover: top;   /* = 0% */
+}
+.bgcolor-bottom-top {
+    --class-bgcolor-angle: to top; /* = 0deg */
+    --class-bgcolor-pos-y: top;
+    --class-bgcolor-pos-y-hover: bottom;
+}
+.bgcolor-left-right {
+    --class-bgcolor-angle: to right;    /* = 90deg */
+    --class-bgcolor-pos-x: right;       /* = 100% */
+    --class-bgcolor-pos-x-hover: left;  /* = 0% */
+}
+.bgcolor-right-left {
+    --class-bgcolor-angle: to left; /* = 270deg */
+    --class-bgcolor-pos-x: left;
+    --class-bgcolor-pos-x-hover: right;
+}
